@@ -1,0 +1,103 @@
+@import "../../styles/mixins.scss";
+
+.mobile-header {
+  background-color: black;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  .left {
+    width: calc(100% / 3);
+    font-size: 2em;
+  }
+
+  .logo {
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 80%;
+    }
+  }
+
+  .right {
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2em;
+
+    .burger-menu {
+      height: 100%;
+      width: 4em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10%;
+      cursor: pointer;
+    }
+
+    .burger-bar {
+      width: 30%;
+      height: 5%;
+      background-color: white;
+      border-radius: 0.5em;
+    }
+  }
+
+  .menu {
+    width: 50%;
+    height: 100%;
+    background-color: #333333;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s linear;
+  }
+
+  .visible {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s linear;
+  }
+
+  .burger-bar.clicked:nth-child(1){
+    transform: rotate(45deg) translate(35%, .25em);
+    transition: ease-out 0.5s;
+  }
+
+  .burger-bar.clicked:nth-child(2){
+    transform: scale(0.01);
+    transition: ease-out 0.5s;
+  }
+
+  .burger-bar.clicked:nth-child(3){
+    transform: rotate(135deg) translate(-35%, .25em);
+    transition: ease-out 0.5s;
+  }
+
+  .burger-bar.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+  }
+
+
+  @include desktop {
+    display: none;
+  }
+
+
+}

@@ -1,0 +1,32 @@
+@import "../../styles/mixins.scss";
+
+.header {
+    background-color: black;
+    height: 12vh;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+
+    .left {
+        background-color: green;
+        width: calc(100%/3);
+        font-size: 3em;
+    }
+
+    img {
+        height: 80%;
+    }
+
+    .right{
+        background-color: pink;
+        width: calc(100%/3);
+        font-size: 3em;
+    }
+
+    @include desktop {
+        display: flex;
+    }
+}
